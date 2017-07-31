@@ -47,9 +47,9 @@ public class HexUtilsTest {
      */
     @Test
     public void wordCountTestKilo() {
-        assertEquals(1023d / 1024, HexUtils.wordCount("3FF", 16, "kilo"), 0);
-        assertEquals(1024d / 1024, HexUtils.wordCount("400", 16, "kilo"), 0);
-        assertEquals(1025d / 1024, HexUtils.wordCount("401", 16, "kilo"), 0);
+        assertEquals(1023d / 1024, HexUtils.wordCount("3FF", 8, "kilo"), 0);
+        assertEquals(1024d / 1024, HexUtils.wordCount("400", 8, "kilo"), 0);
+        assertEquals(1025d / 1024, HexUtils.wordCount("401", 8, "kilo"), 0);
 
     }
 
@@ -58,9 +58,9 @@ public class HexUtilsTest {
      */
     @Test
     public void wordCountTestMega() {
-        assertEquals(1023d / 1024 / 1024, HexUtils.wordCount("3FF", 16, "Mega"), 0);
-        assertEquals(1024d / 1024 / 1024, HexUtils.wordCount("400", 16, "Mega"), 0);
-        assertEquals(1025d / 1024 / 1024, HexUtils.wordCount("401", 16, "Mega"), 0);
+        assertEquals(1023d / 1024 / 1024, HexUtils.wordCount("3FF", 8, "Mega"), 0);
+        assertEquals(1024d / 1024 / 1024, HexUtils.wordCount("400", 8, "Mega"), 0);
+        assertEquals(1025d / 1024 / 1024, HexUtils.wordCount("401", 8, "Mega"), 0);
 
     }
 
@@ -69,9 +69,9 @@ public class HexUtilsTest {
      */
     @Test
     public void wordCountTestGiga() {
-        assertEquals(1023d / 1024 / 1024 / 1024, HexUtils.wordCount("3FF", 16, "Giga"), 0);
-        assertEquals(1024d / 1024 / 1024 / 1024, HexUtils.wordCount("400", 16, "Giga"), 0);
-        assertEquals(1025d / 1024 / 1024 / 1024, HexUtils.wordCount("401", 16, "Giga"), 0);
+        assertEquals(1023d / 1024 / 1024 / 1024, HexUtils.wordCount("3FF", 8, "Giga"), 0);
+        assertEquals(1024d / 1024 / 1024 / 1024, HexUtils.wordCount("400", 8, "Giga"), 0);
+        assertEquals(1025d / 1024 / 1024 / 1024, HexUtils.wordCount("401", 8, "Giga"), 0);
 
     }
 
@@ -80,9 +80,9 @@ public class HexUtilsTest {
      */
     @Test
     public void byteCountTestKilo() {
-        assertEquals((1023d / 1024) * (16 / 8), HexUtils.byteCount("3FF", 16, "kilo"), 0);
-        assertEquals((1024d / 1024) * (16 / 8), HexUtils.byteCount("400", 16, "kilo"), 0);
-        assertEquals((1025d / 1024) * (16 / 8), HexUtils.byteCount("401", 16, "kilo"), 0);
+        assertEquals((1023d / 1024), HexUtils.byteCount("3FF", 8, "kilo"), 0);
+        assertEquals((1024d / 1024), HexUtils.byteCount("400", 8, "kilo"), 0);
+        assertEquals((1025d / 1024), HexUtils.byteCount("401", 8, "kilo"), 0);
 
     }
 
@@ -91,9 +91,9 @@ public class HexUtilsTest {
      */
     @Test
     public void byteCountTestMega() {
-        assertEquals((1023d / 1024 / 1024) * (16 / 8), HexUtils.byteCount("3FF", 16, "Mega"), 0);
-        assertEquals((1024d / 1024 / 1024) * (16 / 8), HexUtils.byteCount("400", 16, "Mega"), 0);
-        assertEquals((1025d / 1024 / 1024) * (16 / 8), HexUtils.byteCount("401", 16, "Mega"), 0);
+        assertEquals((1023d / 1024 / 1024), HexUtils.byteCount("3FF", 8, "Mega"), 0);
+        assertEquals((1024d / 1024 / 1024), HexUtils.byteCount("400", 8, "Mega"), 0);
+        assertEquals((1025d / 1024 / 1024), HexUtils.byteCount("401", 8, "Mega"), 0);
 
     }
 
@@ -102,9 +102,9 @@ public class HexUtilsTest {
      */
     @Test
     public void byteCountTestGiga() {
-        assertEquals((1023d / 1024 / 1024 / 1024) * (16 / 8), HexUtils.byteCount("3FF", 16, "Giga"), 0);
-        assertEquals((1024d / 1024 / 1024 / 1024) * (16 / 8), HexUtils.byteCount("400", 16, "Giga"), 0);
-        assertEquals((1025d / 1024 / 1024 / 1024) * (16 / 8), HexUtils.byteCount("401", 16, "Giga"), 0);
+        assertEquals((1023d / 1024 / 1024 / 1024), HexUtils.byteCount("3FF", 8, "Giga"), 0);
+        assertEquals((1024d / 1024 / 1024 / 1024), HexUtils.byteCount("400", 8, "Giga"), 0);
+        assertEquals((1025d / 1024 / 1024 / 1024), HexUtils.byteCount("401", 8, "Giga"), 0);
 
     }
     

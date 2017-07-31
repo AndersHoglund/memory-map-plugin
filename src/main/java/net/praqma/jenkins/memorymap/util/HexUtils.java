@@ -51,6 +51,7 @@ public class HexUtils {
         scale.put("giga", GIGA);
     }
 
+/* Original code with Total mixup of wordSize and radix
     public static double wordCount(String hexString, int wordSize, String scale) {
         return HexUtils.getRadix(hexString, wordSize) / (double) HexUtils.scale.get(scale.toLowerCase());
     }
@@ -62,7 +63,21 @@ public class HexUtils {
     private static double getRadix(String hexString, int radix) {
         return (double) Long.parseLong(hexString.replace("0x", "").replaceAll("\\s", ""), radix);
     }
+*/
 
+/* Fixup with radix always 16, always hex nunmbers in map files....or? */
+    public static double byteCount(String hexString, int wordSize, String scale) {
+        return HexUtils.getRadix(hexString, 16) / (double) HexUtils.scale.get(scale.toLowerCase());
+    }
+
+    public static double wordCount(String hexString, int wordSize, String scale) {
+        return HexUtils.byteCount(hexString, wordSize, scale) / (wordSize / (double) BITS_PER_BYTE);
+    }
+
+    private static double getRadix(String hexString, int radix) {
+        return (double) Long.parseLong(hexString.replace("0x", "").replaceAll("\\s", ""), radix);
+    }
+    
     public static class HexifiableString implements Comparable<HexifiableString> {
 
         public final String rawString;
